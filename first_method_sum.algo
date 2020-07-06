@@ -1,0 +1,66 @@
+//sum of overlapping elements 
+ALGORITHM algorithm_name
+VAR
+    set1: ARRAY_OF INTEGER[50];
+    set2: ARRAY_OF INTEGER[50];
+BEGIN
+    FOR i FROM 0 TO set1.length DO
+        FOR j FROM 0 TO set2.length  DO
+            IF (set1[i]==set2[j]) THEN
+                sum:=sum+set1[i]
+            END_IF
+        END_FOR
+    END_FOR
+    write(sum*2)
+END
+-----------------------------------------
+//sum of all distinct elements 
+ALGORITHM algorithm_name
+VAR
+    i,j : INTEGER;
+    sum : INTEGER:=0;
+    T1: ARRAY_OF INTEGER;
+    T2: ARRAY_OF INTEGER;
+    T3 : ARRAY_OF INTEGER;
+    cont : ARRAY_OF INTEGER;
+BEGIN
+    Read(T1)
+    Read(T2)
+FOR i FROM 0 TO T1.length-1  DO
+    FOR j FROM 0 TO T2.length-1 DO
+        IF (T1[i]<>T2[j]) THEN
+        exist:=false
+    
+        ELSE
+            exist:=true
+            
+        END_IF
+        IF (!exist) THEN
+    T3:=T3.concat(T2[i])
+    END_IF
+    END_FOR
+END_FOR
+
+
+
+FOR i FROM 0 TO T2.length-1   DO
+    FOR j FROM 0 TO T1.length-1 DO
+        IF (T2[i]<>T1[j]) THEN
+         exist:=false
+    
+        ELSE
+            exist:=true BREAK;     
+        END_IF
+
+    END_FOR
+    IF (!exist) THEN
+    T3:=T3.concat(T2[i])
+    END_IF
+END_FOR
+
+    Write(T3)
+FOR i FROM 1 TO T3.length   DO
+    sum:=sum+T3[i]
+END_FOR
+    Write(sum)
+END

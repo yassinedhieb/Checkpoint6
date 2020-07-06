@@ -1,0 +1,52 @@
+H=HASH_TABLE<INTEGER,INTEGER>;
+FOR i FROM 0 TO set1.length  DO
+    IF (H.lookup(set1[i])) THEN
+        count:=H.get(set1[i]),count++
+        H.insert(set1[i],count)
+    ELSE
+        count:=1;
+        insert(set1[i],count)
+    END_IF
+END_FOR
+FOR i FROM 0 TO set2.length  DO
+    IF (H.lookup(set2[i])) THEN
+        count:=H.get(set2[i]),count++
+        H.insert(set2[i],count)
+    ELSE
+        count:=1;
+        insert(set2[i],count)
+    END_IF
+END_FOR
+tab=H.getKeys();
+FOR i FROM 0 TO tab.length DO
+    IF (H.get(tab[i]=1)) THEN
+        sum:=sum+tab[i];
+    END_IF
+END_FOR
+
+---------------------------------------------------
+H=HASH_TABLE<INTEGER,INTEGER>;
+FOR i FROM 0 TO set1.length  DO
+    IF (H.lookup(set1[i])) THEN
+        count:=H.get(set1[i]),count++
+        H.insert(set1[i],count)
+    ELSE
+        count:=1;
+        insert(set1[i],count)
+    END_IF
+END_FOR
+FOR i FROM 0 TO set2.length  DO
+    IF (H.lookup(set2[i])) THEN
+        count:=H.get(set2[i]),count++
+        H.insert(set2[i],count)
+    ELSE
+        count:=1;
+        insert(set2[i],count)
+    END_IF
+END_FOR
+tab=H.getKeys();
+FOR i FROM 0 TO tab.length DO
+    IF (H.get(tab[i]!=1)) THEN //the difference
+        sum:=sum+tab[i];
+    END_IF
+END_FOR

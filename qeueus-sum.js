@@ -29,13 +29,13 @@ function Queue () {
     for (var j=0 ; j < n; j++){
       if (i!=j && arr[i]==arr[j]){
         result.push(arr[i])};
-       }
+      }
     }
       while(p<result.length){
         s+=result[p]
         p++
       }
-     console.log(s);
+    console.log(s);
 }
 
 var q = new Queue(); 
@@ -47,4 +47,4 @@ q.enqueue(3);
 q.enqueue(5);
 q.enqueue(2); 
 
-q.SUM();
+q.SUM()
